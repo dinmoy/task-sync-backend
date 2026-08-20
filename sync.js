@@ -56,8 +56,7 @@ async function syncTasks() {
     const { data: users, error: userError } = await supabase.from('users').select('*');
 
     if (userError) {
-        console.error('유저 조회 실패:', userError.message);
-        return;
+        throw new Error(`유저 조회 실패: ${userError.message}`);
     }
 
     if (!users || users.length === 0) {
