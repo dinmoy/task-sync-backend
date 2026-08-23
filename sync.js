@@ -3,7 +3,7 @@ require('dotenv').config();
 const { google } = require('googleapis');
 const { createClient } = require('@supabase/supabase-js');
 const crypto = require('crypto');
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 const SHEET_ID = process.env.SHEET_ID
 const SHEET_RANGE = "'업무정리'!A2:L";
 
